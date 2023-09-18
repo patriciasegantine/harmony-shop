@@ -35,3 +35,7 @@ To run this project locally, follow the steps below:
 
 Feel free to explore my project, which focuses on daily care and well-being. If you have any questions or would like to
 collaborate, please don't hesitate to get in touch!
+
+
+### Note:
+All the texts generated in this project were crafted with the assistance of ChatGPT, a powerful natural language generation tool developed by OpenAI. I extend my appreciation to OpenAI for the support provided through this innovative technology.
