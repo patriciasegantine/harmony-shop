@@ -11,6 +11,10 @@ export const ContactContent = styled.div`
   align-items: end;
   gap: ${theme['spacing-regular']};
 
+  & div {
+    flex: 1;
+    width: 100%;
+  }
 
   @media (max-width: ${theme["tablet"]}) {
     flex-direction: column;
@@ -19,24 +23,22 @@ export const ContactContent = styled.div`
 
 export const MyInformation = styled.div`
   border-radius: ${theme['border-radius-primary']};
-  color: ${theme["color-detached"]};
+  padding: ${theme['spacing-regular']};
+
+  color: ${theme["color-neutral-light"]};
   transition: 0.4s;
-  
-  
+
+  ul {
+    list-style: none;
+  }
+
+  span {
+    font-weight: 600;
+    padding-right: ${theme['spacing-extra-small']};
+  }
+
   a {
-    color: ${theme["color-detached"]};
+    color: ${theme["color-neutral-light"]};
     text-decoration: none;
   }
 `
-
-export const InfoContactBox = styled.div`
-  display: flex;
-  gap: ${theme["spacing-extra-small"]};
-  margin-bottom: ${theme["spacing-small"]};
-`
-
-export const InfoTitle = styled.span`
-  font-weight: 600;
-`
-
-export const InfoContent = styled.span``
