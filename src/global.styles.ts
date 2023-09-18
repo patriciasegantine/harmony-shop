@@ -30,6 +30,10 @@ export const SectionContainer = styled.section`
   padding-right: ${theme["spacing-small"]};
 `
 
+export const SectionTitle = styled.h2`
+  margin-bottom: ${theme["spacing-regular"]};
+`
+
 export const PrimaryButton = styled.button`
   padding: ${theme["spacing-small"]} ${theme["spacing-regular"]};
   margin-top: ${theme["spacing-small"]};

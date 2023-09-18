@@ -1,4 +1,4 @@
-import { PrimaryButton } from "../../global.styles.ts";
+import { PrimaryButton, SectionTitle } from "../../global.styles.ts";
 import { CoursesContainer, CoursesContent } from "./courses.styles.ts";
 import { useState } from "react";
 import { CourseInterface, coursesInfo } from "./coursesInfo.ts";
@@ -17,7 +17,7 @@ export const Courses = () => {
   
   return (
     <CoursesContainer>
-      <h2>Our courses</h2>
+      <SectionTitle>Our courses</SectionTitle>
       <p>
         Welcome to our collection of courses thoughtfully designed to elevate your experience of wellbeing and beauty in
         the comfort of your own home. At Harmony, we believe that true beauty and inner balance can be achieved
