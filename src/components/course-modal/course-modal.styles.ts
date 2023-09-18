@@ -3,6 +3,16 @@ import { theme } from "../../theme.ts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { PrimaryButton } from "../../global.styles.ts";
 
+export const modalStyle = {
+  position: 'absolute' as const,
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  bgcolor: 'background.paper',
+  boxShadow: 24,
+  p: 6,
+};
+
 export const ModalContent = styled.div``
 
 export const ItemDescription = styled.span`

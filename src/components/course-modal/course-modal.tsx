@@ -1,8 +1,17 @@
 import { Box, Modal } from "@mui/material";
 import * as React from "react";
-import { BoxImgModal, CloseButton, ItemDescription, ModalButton, ModalContent } from "./course-modal.styles.ts";
+import {
+  BoxImgModal,
+  CloseButton,
+  ItemDescription,
+  ModalButton,
+  ModalContent,
+  modalStyle
+} from "./course-modal.styles.ts";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 import { CourseInterface } from "../../pages/courses/coursesInfo.ts";
+import { useNavigate } from "react-router-dom";
+import { RouterEnum } from "../../enum/router-enum.ts";
 
 interface CourseModalInterface {
   open: boolean
@@ -10,22 +19,18 @@ interface CourseModalInterface {
   currentCourse: CourseInterface | undefined
 }
 
+
+
 export const CourseModal: React.FC<CourseModalInterface> = ({open, setOpen, currentCourse}) => {
+  
   const handleClose = () => setOpen(false);
   
-  const style = {
-    position: 'absolute' as const,
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    bgcolor: 'background.paper',
-    boxShadow: 24,
-    p: 6,
-  };
+  const navigate = useNavigate()
   
   const handleEnrollCourse = (name: string | undefined) => {
     setOpen(!open)
     console.log('name', name)
+    navigate(RouterEnum["enroll-course"])
   };
   
   return (
@@ -36,9 +41,8 @@ export const CourseModal: React.FC<CourseModalInterface> = ({open, setOpen, curr
       aria-describedby="modal-modal-description"
     >
       
-      <Box sx={style}>
+      <Box sx={modalStyle}>
         <CloseButton onClick={handleClose} icon={faCircleXmark}/>
-        
         
         <h2>{currentCourse?.name}</h2>
         
