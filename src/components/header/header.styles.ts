@@ -19,6 +19,7 @@ export const HeaderContainer = styled.div<{
             position: fixed;
             box-shadow: ${theme["shadow-primary"]};
             border-bottom: none;
+            background: ${theme["color-white"]};
           `}
 `
 
