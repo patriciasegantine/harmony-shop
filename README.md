@@ -33,9 +33,26 @@ To run this project locally, follow the steps below:
 
 2. This will generate an optimized and minified version of your project in the `dist` directory.
 
+
+
+## Acknowledgment:
+
+### ChatGPT:
+
+All text content in this project was generated with the assistance of ChatGPT, a powerful natural language generation tool developed by OpenAI. I extend my gratitude to OpenAI for their support through this innovative technology.
+
+### Development Note: Backend Implementation:
+
+
+Please be aware that, as of now, there are no backend implementations in place. However, I have plans to develop backend functionalities in the near future.
+
+While my current focus remains on the frontend and core features, I am fully committed to expanding my project to include robust backend components. Stay tuned for updates as I work towards a more comprehensive solution.
+
+I greatly appreciate your patience and support.
+
+
 Feel free to explore my project, which focuses on daily care and well-being. If you have any questions or would like to
 collaborate, please don't hesitate to get in touch!
 
 
-### Note:
-All the texts generated in this project were crafted with the assistance of ChatGPT, a powerful natural language generation tool developed by OpenAI. I extend my appreciation to OpenAI for the support provided through this innovative technology.
+— Patricia Segantine
