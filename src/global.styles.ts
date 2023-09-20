@@ -1,5 +1,7 @@
 import styled, { createGlobalStyle } from "styled-components";
 import { theme } from './theme.ts'
+import LoadingButton from '@mui/lab/LoadingButton';
+
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -32,6 +34,7 @@ export const SectionContainer = styled.section`
 
 export const SectionTitle = styled.h2`
   margin-bottom: ${theme["spacing-regular"]};
+  
 `
 
 export const PrimaryButton = styled.button`
@@ -45,4 +48,15 @@ export const PrimaryButton = styled.button`
   font-weight: 600;
   font-family: ${theme["font-secondary"]};
   cursor: pointer;
+`
+
+export const CustomButton = styled(LoadingButton)`
+  font-weight: 600;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  & .MuiButtonBase-root {
+    cursor: not-allowed !important;
+  }
 `

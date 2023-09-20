@@ -2,8 +2,12 @@ import { Navbar } from "../navbar/navbar.tsx";
 import logo from "../../assets/img/logo.png"
 import { useEffect, useState } from "react";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { HeaderContainer, HeaderContent, Logo, MobileButton } from "./header.styles.ts";
+import { FlexContainer, HeaderContainer, HeaderContent, Logo, MobileButton, StyledBadge } from "./header.styles.ts";
 import { MenuDrawer } from "../menu-drawer/menu-drawer.tsx";
+import { IconButton } from "@mui/material";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Login } from "../../assets/login/login.tsx";
+import { PlusOne } from "@mui/icons-material";
 
 export const Header = () => {
   
@@ -11,6 +15,7 @@ export const Header = () => {
   const [showMenuMobile, setShowMenuMobile] = useState<boolean>(false)
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
   const [isMenuFixed, setIsMenuFixed] = useState<boolean>(false)
+  const [cartQuantity, setCartQuantity] = useState<number>(0)
   
   const handleMobileToggle = () => {
     setIsMobileOpen((prevState) => !prevState)
@@ -61,6 +66,25 @@ export const Header = () => {
               : <Navbar isMobileOpen={isMobileOpen}/>
           }
         </div>
+        
+        <FlexContainer>
+          <IconButton onClick={() => setCartQuantity(cartQuantity + 1)}>
+            <PlusOne fontSize={"medium"} />
+          </IconButton>
+          
+          <IconButton aria-label="cart">
+            <StyledBadge
+              badgeContent={cartQuantity}
+              color="secondary">
+              <ShoppingCartIcon fontSize={"medium"} />
+            </StyledBadge>
+          </IconButton>
+          
+          <Login/>
+          
+          
+        </FlexContainer>
+        
       </HeaderContent>
       
       <MenuDrawer
