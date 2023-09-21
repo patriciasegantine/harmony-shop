@@ -19,6 +19,10 @@ export const GlobalStyle = createGlobalStyle`
     background: ${theme["background-color"]};
     color: ${theme['color-neutral-dark']};
     -webkit-font-smoothing: antialiased;
+
+    & .MuiLoadingButton-root {
+      background-color: ${theme["color-highlight"]};
+    }
   }
 `
 
@@ -55,8 +59,4 @@ export const CustomButton = styled(LoadingButton)`
   width: 100%;
   display: flex;
   align-items: center;
-
-  & .MuiButtonBase-root {
-    cursor: not-allowed !important;
-  }
 `

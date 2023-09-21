@@ -8,6 +8,7 @@ export const theme = {
   'color-neutral-dark': '#31241E',
   
   'color-detached': '#86654B',
+  'color-highlight': '#D8CDC4',
   
   'background-color': '#F6F4F3',
   
