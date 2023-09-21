@@ -32,11 +32,6 @@ export const Navbar: React.FC<NaveBar> = ({isMobileOpen}) => {
       router: RouterEnum.home
     },
     {
-      name: 'about',
-      icon: faDiscourse,
-      router: RouterEnum.about
-    },
-    {
       name: 'courses',
       icon: faDiscourse,
       router: RouterEnum.courses
