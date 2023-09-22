@@ -25,7 +25,6 @@ const images: ImgInterface[] = [
     src: cosmetology,
     title: 'Cosmetology'
   },
-
 ]
 
 export const HomeCourses = () => {
