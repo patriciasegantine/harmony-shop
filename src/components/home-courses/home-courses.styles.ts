@@ -7,5 +7,8 @@ export const ImgBox = styled.div`
     border-radius: ${theme["border-radius-primary"]};
     width: 100%;
   }
+`
 
+export const HomeCourseTitle = styled.p`
+  font-size: ${theme["font-size-m"]};
 `

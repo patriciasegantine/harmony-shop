@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
@@ -63,24 +63,38 @@ const customerReview: ICustomerReview[] = [
 
 export const CarouselProducts: React.FC<any> = () => {
   
-  const handleOpen = (index: number) => {
-    // setOpen(true)
-    // setProjectIndex(index)
-    console.log(index)
-  };
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
+  
+  const [slidesPerView, setSlidesPerView] = useState<number>(1)
+  
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+    }
+    
+    window.addEventListener('resize', handleResize)
+    
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
+  
+  useEffect(() => {
+    if (windowWidth < 768) {
+      setSlidesPerView(1)
+    } else {
+      setSlidesPerView(3)
+    }
+  }, [windowWidth])
   
   return (
     <CarouselContainer>
       
       <Swiper
-        // pagination={{
-        //   // type: 'bullets',
-        //   clickable: true
-        // }}
         navigation={true}
         modules={[Navigation, Pagination, Autoplay]}
         className="mySwiper"
-        slidesPerView={3}
+        slidesPerView={slidesPerView}
         autoplay={{
           delay: 3000,
           disableOnInteraction: true,
@@ -96,7 +110,6 @@ export const CarouselProducts: React.FC<any> = () => {
                 key={index}
                 virtualIndex={index}
                 draggable
-                onClick={() => handleOpen(index)}
               >
                 <ReviewCard
                   img={slideContent.img}

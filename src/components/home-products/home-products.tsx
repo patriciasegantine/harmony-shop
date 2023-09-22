@@ -53,7 +53,7 @@ export const HomeProducts = () => {
     <Grid container spacing={3}>
       {
         products.map(item => (
-          <Grid item xs={4} key={item.id}>
+          <Grid item xs={12} md={4} key={item.id}>
             <HomeProductBox>
               <img src={item.img} alt={item.name}/>
               <ProductTitle>{item.name}</ProductTitle>

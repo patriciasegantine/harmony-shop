@@ -16,13 +16,13 @@ export const theme = {
   'font-primary': 'Poppins, sans-serif',
   'font-secondary': 'Montserrat, sans-serif',
   
-  // font size
-  'font-size-xs': '12px',
-  'font-size-s': '14px',
-  'font-size-m': '16px',
-  'font-size-l': '24px',
-  'font-size-xl': '36px',
-  'font-size-xxl': '48px',
+  // font size24/1
+  'font-size-xs': '.75rem',
+  'font-size-s': '0.875rem',
+  'font-size-m': '1rem',
+  'font-size-l': '1.5rem',
+  'font-size-xl': '2.25rem',
+  'font-size-xxl': '3rem',
   
   'line-height-s': '1.5',
   'line-height-m': '1.6',
@@ -37,11 +37,11 @@ export const theme = {
   
   // shadow
   'shadow-primary': 'rgba(17, 17, 26, 0.1) 0px 0px 16px',
-
-//   border-radius
+  
+  // border-radius
   'border-radius-primary': '6px',
-
-//   breakpoint
+  
+  // breakpoint
   
   'mobile': '480px',
   'tablet': '768px',

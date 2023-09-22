@@ -1,20 +1,13 @@
 import styled from "styled-components";
 import { theme } from "../../theme.ts";
 
-export const ShopBox = styled.div`
-  margin: 0 auto;
-  text-align: center;
-`
 export const ProductTitle = styled.h3``
-
-export const ProductDescription = styled.span`
-
+export const ProductDescription = styled.div`
   font-size: ${theme["font-size-s"]};
   color: ${theme["color-neutral-dark"]};
-`
+  margin-bottom: ${theme["spacing-small"]};
 
-export const ProductValue = styled.p`
-  font-weight: bold;
-  text-align: end;
-  font-size: ${theme["font-size-l"]};
+  @Media (min-width: ${theme.laptop}) {
+    height: 100px;
+  }
 `

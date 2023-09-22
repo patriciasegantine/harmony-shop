@@ -5,6 +5,7 @@ import cosmetology from "../../assets/img/cosmetology.png";
 import holistic from "../../assets/img/holistic.png";
 import { useNavigate } from "react-router-dom";
 import { RouterEnum } from "../../enum/router-enum.ts";
+import { HomeCourseTitle } from "./home-courses.styles.ts";
 
 interface ImgInterface {
   src: string
@@ -46,7 +47,7 @@ export const HomeCourses = () => {
         <Grid container spacing={3}>
           {
             images.map((item: ImgInterface) => (
-              <Grid item key={item.title} xs={4}>
+              <Grid item key={item.title} xs={12} md={4}>
                 <Card>
                   <CardActionArea onClick={handleGotoCourses}>
                     <CardMedia
@@ -55,7 +56,7 @@ export const HomeCourses = () => {
                       alt={item.src}
                     />
                     <CardContent>
-                      <p> {item.title}</p>
+                      <HomeCourseTitle> {item.title}</HomeCourseTitle>
                     </CardContent>
                   </CardActionArea>
                 </Card>

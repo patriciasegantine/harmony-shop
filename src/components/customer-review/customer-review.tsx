@@ -7,7 +7,9 @@ export const CustomerReview: React.FC<any> = () => {
     <HomeBlock>
       <HomeDividerHeader>
         <HomeTitle>reviews from our customers</HomeTitle>
-        <HomeSubtitle>Explore our shop and take home the beauty of nature</HomeSubtitle>
+        <HomeSubtitle>Discover what our valued customers have to say about their Serenity experience.
+          We take pride in delivering organic beauty and holistic well-being that our clients love.
+        </HomeSubtitle>
       </HomeDividerHeader>
       
       <CarouselProducts/>
