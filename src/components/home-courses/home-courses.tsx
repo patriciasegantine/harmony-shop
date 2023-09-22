@@ -1,10 +1,8 @@
-import { HomeDivider } from "../../pages/home/home.styles.ts";
-import { Grid } from "@mui/material";
-import { CustomButton } from "../../global.styles.ts";
-import { theme } from "../../theme.ts";
+import { HomeBlock, HomeDividerHeader, HomeSubtitle, HomeTitle } from "../../pages/home/home.styles.ts";
+import { Card, CardActionArea, CardContent, CardMedia, Grid } from "@mui/material";
 import beautiful from "../../assets/img/beautiful.png";
 import cosmetology from "../../assets/img/cosmetology.png";
-import { ImgBox } from "./home-courses.styles.ts";
+import holistic from "../../assets/img/holistic.png";
 import { useNavigate } from "react-router-dom";
 import { RouterEnum } from "../../enum/router-enum.ts";
 
@@ -16,12 +14,17 @@ interface ImgInterface {
 const images: ImgInterface[] = [
   {
     src: beautiful,
-    title: 'beautiful'
+    title: 'Beauty at Home'
+  },
+  {
+    src: holistic,
+    title: 'Holistic Wellness and Beauty'
   },
   {
     src: cosmetology,
-    title: 'cosmetology'
+    title: 'Cosmetology'
   },
+
 ]
 
 export const HomeCourses = () => {
@@ -33,42 +36,34 @@ export const HomeCourses = () => {
   };
   
   return (
-    <>
-      <HomeDivider>Courses</HomeDivider>
-      <Grid container spacing={3}>
-        
-        <Grid item xs={8}>
-          <Grid container spacing={3}>
-            {
-              images.map((item: ImgInterface) => (
-                  <Grid item key={item.title} xs={6}>
-                    <ImgBox>
-                      <img src={item.src} alt={item.title}/>
-                    </ImgBox>
-                  </Grid>
-                )
-              )
-            }
-          </Grid>
-        </Grid>
-        
-        <Grid item xs={4}>
-          <h3>
-            Learn and grow with the wisdom of nature
-          </h3>
-          
-          <p>
-            Present the available courses, such as "Natural Skin Care" and "Holistic Well-being."
-          </p>
-          
-          <CustomButton
-            sx={{marginTop: theme["spacing-small"]}}
-            onClick={handleGotoCourses}
-          >
-            courses
-          </CustomButton>
+    <HomeBlock>
+      <HomeDividerHeader>
+        <HomeTitle>Courses</HomeTitle>
+        <HomeSubtitle>Learn and grow with the wisdom of nature</HomeSubtitle>
+      </HomeDividerHeader>
+      
+      <Grid container>
+        <Grid container spacing={3}>
+          {
+            images.map((item: ImgInterface) => (
+              <Grid item key={item.title} xs={4}>
+                <Card>
+                  <CardActionArea onClick={handleGotoCourses}>
+                    <CardMedia
+                      component="img"
+                      image={item.src}
+                      alt={item.src}
+                    />
+                    <CardContent>
+                      <p> {item.title}</p>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Grid>
+            ))}
         </Grid>
       </Grid>
-    </>
+    
+    </HomeBlock>
   );
 };
