@@ -31,7 +31,6 @@ export const HomeTitle = styled.h2`
   align-items: center;
   justify-content: center;
 
-
   &::before, &::after {
     content: "";
     display: block;
@@ -42,10 +41,13 @@ export const HomeTitle = styled.h2`
   }
 `
 
-export const HomeSubtitle = styled.p`
+export const HomeSubtitle = styled.span`
   font-family: ${theme["font-primary"]};
   font-size: ${theme["font-size-m"]};
   font-weight: 500;
+  display: block;
+  max-width: 80%;
+  margin: 0 auto;
 `
 
 export const HomeSectionButton = styled(CustomButton)`
