@@ -1,7 +1,8 @@
-import { Box, Grid, TextField, ThemeProvider } from "@mui/material";
+import { Box, Grid, IconButton, Snackbar, TextField, ThemeProvider } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { muiTheme } from "../../muiTheme.ts";
 import { ModalButton } from "../course-modal/course-modal.styles.ts";
+import CloseIcon from '@mui/icons-material/Close';
 
 interface FormData {
   name: string
@@ -12,7 +13,7 @@ interface FormData {
 export const ContactForm = () => {
   
   const [isDisabled, setIsDisabled] = useState<boolean>(false)
-  
+  const [openMessage, setOpenMessage] = useState<boolean>(false)
   const [dataForm, setDataForm] = useState<FormData>({
     name: '',
     email: '',
@@ -20,18 +21,30 @@ export const ContactForm = () => {
   })
   
   const onChangeInputValue = (value: string, type: 'name' | 'email' | 'message') => {
-    
-    const newValue = {...dataForm, [type]: value}
-    
-    setDataForm(newValue)
+    setDataForm({...dataForm, [type]: value})
   }
   
   const handleSubmit = (e: { preventDefault: () => void; }) => {
-    e.preventDefault();
+    e.preventDefault()
+    setOpenMessage(true)
   };
   
+  const handleCloseMessage = () => {
+    setOpenMessage(!openMessage)
+  }
+  
+  const action = (
+    <IconButton
+      size="small"
+      aria-label="close"
+      color="inherit"
+      onClick={handleCloseMessage}
+    >
+      <CloseIcon fontSize="small"/>
+    </IconButton>
+  );
+  
   useEffect(() => {
-    
     const isFieldsFilled = dataForm.name !== '' && dataForm.email !== '' && dataForm.message !== ''
     
     if (isFieldsFilled) {
@@ -93,10 +106,21 @@ export const ContactForm = () => {
         
         <ModalButton
           disabled={!isDisabled}
-          onClick={() => console.log('sent')}
+          type={"submit"}
         >
           submite
         </ModalButton>
+      </Box>
+      
+      <Box sx={{width: 500}}>
+        <Snackbar
+          autoHideDuration={5000}
+          anchorOrigin={{vertical: "top", horizontal: "right"}}
+          open={openMessage}
+          onClose={handleCloseMessage}
+          message={<> Success </>}
+          action={action}
+        />
       </Box>
     </ThemeProvider>
   );

@@ -1,62 +1,28 @@
-import {
-  ContactContainer,
-  ContactContent,
-  InfoContactBox,
-  MyInformation,
-  InfoTitle,
-  InfoContent
-} from "./contact.styles.ts";
-import { SocialMedia } from "../../components/social-media/social-media.tsx";
+import { ContactContainer, ContactTitle } from "./contact.styles.ts";
 import { ContactForm } from "../../components/contact-form/contact-form.tsx";
-import { SectionTitle } from "../../global.styles.ts";
+import { PopularFaQs } from "../../components/popular-FAQs/popular-FAQs.tsx";
+import { ContactInfo } from "../../components/contact-info/contact-info.tsx";
+import { Grid } from "@mui/material";
 
 export const Contact = () => {
   return (
     <ContactContainer>
-      <SectionTitle>Contact</SectionTitle>
+      <ContactTitle>Popular FaQs</ContactTitle>
+      <PopularFaQs/>
       
-      <ContactContent>
-        <div>
-          <ContactForm/>
-        </div>
+      <ContactTitle>Get in touch</ContactTitle>
+      
+      <Grid container alignItems={"flex-end"}>
         
-        <div>
-          <MyInformation>
-            
-            <InfoContactBox>
-              <InfoTitle> Phone Number:</InfoTitle>
-              
-              <InfoContent>
-                <p> +44 20 1234 5678</p>
-              </InfoContent>
-            </InfoContactBox>
-            
-            <InfoContactBox>
-              <InfoTitle> Email:</InfoTitle>
-              
-              <InfoContent>
-               <p> info@harmony.co.uk</p>
-              </InfoContent>
-            </InfoContactBox>
-            
-            <div>
-              <InfoTitle> Address:</InfoTitle>
-              <InfoContent>
-                <p> 123 Serenity Lane</p>
-                <p> London SW1A 1AA</p>
-                <p>  United Kingdom</p>
-              </InfoContent>
-            </div>
-            
-            <div>
-              <InfoTitle>Social media:</InfoTitle>
-              <SocialMedia/>
-            </div>
-            
-          </MyInformation>
-        </div>
+        <Grid xs={12} md={7}>
+          <ContactForm/>
+        </Grid>
+        
+        <Grid xs={12} md={5}>
+          <ContactInfo/>
+        </Grid>
       
-      </ContactContent>
+      </Grid>
     </ContactContainer>
   );
 };

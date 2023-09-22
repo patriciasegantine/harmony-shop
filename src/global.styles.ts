@@ -24,7 +24,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     @media (max-width: ${theme.laptop}) {
-      font-size: 70%;
+      font-size: 90%;
     }
   }
 
@@ -43,6 +43,7 @@ export const SectionContainer = styled.section`
 
 export const SectionTitle = styled.h2`
   margin-bottom: ${theme["spacing-regular"]};
+
 `
 
 export const PrimaryButton = styled.button`
