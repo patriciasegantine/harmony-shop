@@ -2,7 +2,6 @@ import styled, { createGlobalStyle } from "styled-components";
 import { theme } from './theme.ts'
 import LoadingButton from '@mui/lab/LoadingButton';
 
-
 export const GlobalStyle = createGlobalStyle`
 
   * {
@@ -23,7 +22,13 @@ export const GlobalStyle = createGlobalStyle`
     & .MuiLoadingButton-root {
       background-color: ${theme["color-highlight"]};
     }
+
+    @media (max-width: ${theme.laptop}) {
+      font-size: 70%;
+    }
   }
+
+
 `
 
 export const SectionContainer = styled.section`
@@ -38,7 +43,6 @@ export const SectionContainer = styled.section`
 
 export const SectionTitle = styled.h2`
   margin-bottom: ${theme["spacing-regular"]};
-  
 `
 
 export const PrimaryButton = styled.button`

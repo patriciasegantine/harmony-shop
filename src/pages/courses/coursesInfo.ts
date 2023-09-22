@@ -42,7 +42,7 @@ export const coursesInfo: CourseInterface[] = [
     img: skincare
   },
   {
-    id: 'beautyAtHome',
+    id: 'holistic',
     name: 'Holistic Wellness and Beauty',
     duration: '1 weeks',
     advertisement: 'Explore the harmonious marriage of beauty and well-being and discover how both can complement each other. This course offers a deep dive into relaxation techniques, aromatherapy, and self-care. By participating, you\'ll open the doors to an inner journey that will result in a radiant appearance and a sense of harmony and balance in your life.',

@@ -1,8 +1,9 @@
-import { PrimaryButton, SectionTitle } from "../../global.styles.ts";
-import { CoursesContainer, CoursesContent } from "./courses.styles.ts";
+import { CustomButton, SectionTitle } from "../../global.styles.ts";
+import { CourseContent, CoursesContainer, CoursesContent } from "./courses.styles.ts";
 import { useState } from "react";
 import { CourseInterface, coursesInfo } from "./coursesInfo.ts";
 import { CourseModal } from "../../components/course-modal/course-modal.tsx";
+import { Grid } from "@mui/material";
 
 export const Courses = () => {
   
@@ -18,11 +19,6 @@ export const Courses = () => {
   return (
     <CoursesContainer>
       <SectionTitle>Our courses</SectionTitle>
-      <p>
-        Welcome to our collection of courses thoughtfully designed to elevate your experience of wellbeing and beauty in
-        the comfort of your own home. At Harmony, we believe that true beauty and inner balance can be achieved
-        through natural and sustainable practices.
-      </p>
       
       <p>
         Our courses are created with passion and dedication, focusing on promoting a holistic approach to self-care.
@@ -34,21 +30,24 @@ export const Courses = () => {
         effectively. Begin your journey of wellbeing and beauty at home with Harmony.</p>
       {
         coursesInfo.map((item, index) =>
-          (
-            <>
-              <CoursesContent>
-                <div>
+          (<CoursesContent>
+              <Grid container key={item.id}>
+                <Grid item xs={12} md={6}>
                   <img src={item.img} alt=""/>
-                </div>
+                </Grid>
                 
-                <div>
-                  <h3>{item.name}</h3>
-                  <p>{item.advertisement}</p>
-                  <PrimaryButton onClick={() => handleOpenModal(index)}> Read more</PrimaryButton>
-                </div>
-              </CoursesContent>
-            
-            </>
+                <Grid item xs={12} md={6}>
+                  <CourseContent>
+                    <h3>{item.name}</h3>
+                    <p>{item.advertisement}</p>
+                    <CustomButton
+                      style={{marginTop: '36px'}}
+                      onClick={() => handleOpenModal(index)}>
+                      Read more</CustomButton>
+                  </CourseContent>
+                </Grid>
+              </Grid>
+            </CoursesContent>
           )
         )
       }
