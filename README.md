@@ -3,6 +3,10 @@
 Welcome to my project! This is a showcase of my work and skills in web development, specifically a web page designed for
 daily care and well-being.
 
+<img src="./src/assets/img/harmony-shop.png" alt="Harmony Shop">
+
+[Harmony Shop Website](https://harmony-shop.vercel.app/)
+
 ## Technologies Used
 
 - React
@@ -12,6 +16,8 @@ daily care and well-being.
 - Material UI
 - Font Awesome Icons
 - React Router
+- Swiper
+- Vercel
 
 ## Getting Started
 
@@ -33,26 +39,31 @@ To run this project locally, follow the steps below:
 
 2. This will generate an optimized and minified version of your project in the `dist` directory.
 
-
-
 ## Acknowledgment:
 
 ### ChatGPT:
 
-All text content in this project was generated with the assistance of ChatGPT, a powerful natural language generation tool developed by OpenAI. I extend my gratitude to OpenAI for their support through this innovative technology.
+All text content in this project was generated with the assistance of ChatGPT, a powerful natural language generation
+tool developed by OpenAI. I extend my gratitude to OpenAI for their support through this innovative technology.
 
-### Development Note: Backend Implementation:
+## Development Note:
 
+### Frontend Development:
 
-Please be aware that, as of now, there are no backend implementations in place. However, I have plans to develop backend functionalities in the near future.
+Please be aware that this project is still under active development. While we strive to deliver a complete and
+feature-rich experience, some functionalities may not be fully operational or meet expectations at this time.
 
-While my current focus remains on the frontend and core features, I am fully committed to expanding my project to include robust backend components. Stay tuned for updates as I work towards a more comprehensive solution.
+### Backend Implementation:
+
+Please be aware that, as of now, there are no backend implementations in place. However, I have plans to develop backend
+functionalities in the near future.
+
+While my current focus remains on the frontend and core features, I am fully committed to expanding my project to
+include robust backend components. Stay tuned for updates as I work towards a more comprehensive solution.
 
 I greatly appreciate your patience and support.
 
-
 Feel free to explore my project, which focuses on daily care and well-being. If you have any questions or would like to
 collaborate, please don't hesitate to get in touch!
-
 
 — Patricia Segantine
