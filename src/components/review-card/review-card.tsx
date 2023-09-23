@@ -1,7 +1,7 @@
-import { Rating } from "@mui/lab";
 import React from "react";
 import { CardsItem, RatingContainer, Text } from "./review-card.styles.ts";
-import { Avatar, Card } from "@mui/material";
+import { Avatar, Card, Rating } from "@mui/material";
+import { theme } from "../../theme.ts";
 
 interface ICustomerReview {
   img: string
@@ -12,8 +12,8 @@ interface ICustomerReview {
 export const ReviewCard: React.FC<ICustomerReview> = ({img, text, rating}) => {
   return (
     < >
-      <div style={{marginTop: '100px'}}>
-        <Card sx={{padding: '36px', height: '250px'}}>
+      <div style={{marginTop: theme["spacing-extra-big"]}}>
+        <Card sx={{padding: theme["spacing-regular"], height: '250px'}}>
           <CardsItem>
             <Avatar
               alt="Remy Sharp"

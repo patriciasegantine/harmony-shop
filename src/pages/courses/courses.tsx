@@ -4,6 +4,7 @@ import { useState } from "react";
 import { CourseInterface, coursesInfo } from "./coursesInfo.ts";
 import { CourseModal } from "../../components/course-modal/course-modal.tsx";
 import { Grid } from "@mui/material";
+import { theme } from "../../theme.ts";
 
 export const Courses = () => {
   
@@ -42,7 +43,7 @@ export const Courses = () => {
                     <h3>{item.name}</h3>
                     <p>{item.advertisement}</p>
                     <CustomButton
-                      style={{marginTop: '36px'}}
+                      style={{marginTop: theme["spacing-regular"]}}
                       onClick={() => handleOpenModal(index)}>
                       Read more</CustomButton>
                   </CourseContent>

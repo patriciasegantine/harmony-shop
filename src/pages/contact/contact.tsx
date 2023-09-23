@@ -7,13 +7,9 @@ import { Grid } from "@mui/material";
 export const Contact = () => {
   return (
     <ContactContainer>
-      <ContactTitle>Popular FaQs</ContactTitle>
-      <PopularFaQs/>
-      
       <ContactTitle>Get in touch</ContactTitle>
       
       <Grid container alignItems={"flex-end"}>
-        
         <Grid item xs={12} md={7}>
           <ContactForm/>
         </Grid>
@@ -21,8 +17,10 @@ export const Contact = () => {
         <Grid item xs={12} md={5}>
           <ContactInfo/>
         </Grid>
-      
       </Grid>
+      
+      <ContactTitle>Popular FaQs</ContactTitle>
+      <PopularFaQs/>
     </ContactContainer>
   );
 };
