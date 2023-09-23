@@ -1,52 +1,59 @@
 import { HeaderNavbar, LinkName, NavLinkComponent } from "./navbar.styles.ts";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { faBagShopping, faEnvelope, faHouseChimneyWindow } from "@fortawesome/free-solid-svg-icons";
 import { faDiscourse, IconDefinition } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { RouterEnum } from "../../enum/router-enum.ts";
+import { useLocation } from "react-router-dom";
 
 export type LinksType = "home" | "about" | "courses" | "shop" | "contact" | string
 
 interface NaveBar {
   isMobileOpen: boolean
+  handleMobileToggle: () => void
 }
 
 interface Links {
   name: string
   icon: IconDefinition
   router: string
-  
 }
 
-export const Navbar: React.FC<NaveBar> = ({isMobileOpen}) => {
-  const [active, setActive] = useState<LinksType>('home')
+const links: Links[] = [
+  {
+    name: 'home',
+    icon: faHouseChimneyWindow,
+    router: RouterEnum.home
+  },
+  {
+    name: 'courses',
+    icon: faDiscourse,
+    router: RouterEnum.courses
+  },
+  {
+    name: 'shop',
+    icon: faBagShopping,
+    router: RouterEnum.shop
+  },
+  {
+    name: 'contact',
+    icon: faEnvelope,
+    router: RouterEnum.contact
+  },
+]
+
+export const Navbar: React.FC<NaveBar> = ({isMobileOpen, handleMobileToggle}) => {
+  const [active, setActive] = useState<string>(RouterEnum.home)
   
-  const handleLink = (linkType: string) => {
-    setActive(linkType)
+  const {pathname} = useLocation()
+  
+  const handleLink = () => {
+    if (isMobileOpen) handleMobileToggle()
   }
   
-  const links: Links[] = [
-    {
-      name: 'home',
-      icon: faHouseChimneyWindow,
-      router: RouterEnum.home
-    },
-    {
-      name: 'courses',
-      icon: faDiscourse,
-      router: RouterEnum.courses
-    },
-    {
-      name: 'shop',
-      icon: faBagShopping,
-      router: RouterEnum.shop
-    },
-    {
-      name: 'contact',
-      icon: faEnvelope,
-      router: RouterEnum.contact
-    },
-  ]
+  useEffect(() => {
+    setActive(pathname)
+  }, [pathname]);
   
   return (
     <HeaderNavbar type={isMobileOpen ? 'mobile' : 'desktop'}>
@@ -56,8 +63,8 @@ export const Navbar: React.FC<NaveBar> = ({isMobileOpen}) => {
             <NavLinkComponent
               to={item.router}
               key={item.name}
-              active={active === item.name}
-              onClick={() => handleLink(item.name)}
+              active={active === item.router}
+              onClick={handleLink}
             >
               {
                 isMobileOpen && (

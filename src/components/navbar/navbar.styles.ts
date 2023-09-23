@@ -14,7 +14,6 @@ export const HeaderNavbar = styled.header<{
     flex-direction: column;
     justify-content: start;
     align-items: start;
-
   `
   }
 

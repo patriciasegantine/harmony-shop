@@ -8,17 +8,17 @@ import logo from '../../assets/img/logo.png'
 interface MenuDrawer {
   
   isMobileOpen: boolean
-  setIsMobileOpen: React.Dispatch<boolean>
+  handleMobileToggle: () => void
 }
 
-export const MenuDrawer: React.FC<MenuDrawer> = ({isMobileOpen, setIsMobileOpen}) => {
+export const MenuDrawer: React.FC<MenuDrawer> = ({isMobileOpen, handleMobileToggle}) => {
   
   return (
     
     <Drawer
       anchor={'left'}
       open={isMobileOpen}
-      onClose={() => setIsMobileOpen(false)}
+      onClose={handleMobileToggle}
       
       PaperProps={{
         sx: {
@@ -37,7 +37,7 @@ export const MenuDrawer: React.FC<MenuDrawer> = ({isMobileOpen, setIsMobileOpen}
           />
         </LogoContainer>
         
-        <Navbar isMobileOpen={true}/>
+        <Navbar handleMobileToggle={handleMobileToggle} isMobileOpen={isMobileOpen}/>
       </ContainerDrawer>
     </Drawer>
   

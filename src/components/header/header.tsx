@@ -1,13 +1,14 @@
 import { Navbar } from "../navbar/navbar.tsx";
 import logo from "../../assets/img/logo.png"
 import { useEffect, useState } from "react";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { FlexContainer, HeaderContainer, HeaderContent, Logo, MobileButton, StyledBadge } from "./header.styles.ts";
+import { FlexContainer, HeaderContainer, HeaderContent, Logo, StyledBadge } from "./header.styles.ts";
 import { MenuDrawer } from "../menu-drawer/menu-drawer.tsx";
 import { IconButton } from "@mui/material";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Login } from "../login/login.tsx";
-import { PlusOne } from "@mui/icons-material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useNavigate } from "react-router-dom";
+import { RouterEnum } from "../../enum/router-enum.ts";
 
 export const Header = () => {
   
@@ -15,7 +16,10 @@ export const Header = () => {
   const [showMenuMobile, setShowMenuMobile] = useState<boolean>(false)
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
   const [isMenuFixed, setIsMenuFixed] = useState<boolean>(false)
-  const [cartQuantity, setCartQuantity] = useState<number>(0)
+  
+  const navigate = useNavigate()
+  
+  const handleGoToHome = () => navigate(RouterEnum.home)
   
   const handleMobileToggle = () => {
     setIsMobileOpen((prevState) => !prevState)
@@ -55,26 +59,33 @@ export const Header = () => {
   return (
     <HeaderContainer fixed={isMenuFixed ? 'fixed' : 'not-fixed'}>
       <HeaderContent>
-        <Logo>
+        
+        {showMenuMobile &&
+          <IconButton
+            size="large"
+            aria-label="account of current user"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleMobileToggle}
+            color="inherit"
+          >
+            <MenuIcon/>
+          </IconButton>
+        }
+        
+        <Logo onClick={handleGoToHome}>
           <img src={logo} alt="logo"/>
         </Logo>
         
-        <div>
-          {
-            showMenuMobile
-              ? <MobileButton icon={faBars} onClick={handleMobileToggle} size={"xl"}/>
-              : <Navbar isMobileOpen={isMobileOpen}/>
-          }
-        </div>
+        {
+          !showMenuMobile && <Navbar isMobileOpen={isMobileOpen} handleMobileToggle={handleMobileToggle}/>
+        }
         
         <FlexContainer>
-          <IconButton onClick={() => setCartQuantity(cartQuantity + 1)}>
-            <PlusOne fontSize={"medium"}/>
-          </IconButton>
           
           <IconButton aria-label="cart">
             <StyledBadge
-              badgeContent={cartQuantity}
+              badgeContent={3}
               color="secondary">
               <ShoppingCartIcon fontSize={"medium"}/>
             </StyledBadge>
@@ -82,14 +93,13 @@ export const Header = () => {
           
           <Login/>
         
-        
         </FlexContainer>
       
       </HeaderContent>
       
       <MenuDrawer
         isMobileOpen={isMobileOpen}
-        setIsMobileOpen={setIsMobileOpen}
+        handleMobileToggle={handleMobileToggle}
       />
     
     </HeaderContainer>
