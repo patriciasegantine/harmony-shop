@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { CourseEnrollFormContainer } from "./course-enroll-form.styles.ts";
+import { BoxForm, CourseEnrollFormContainer } from "./course-enroll-form.styles.ts";
 import { Dayjs } from 'dayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { Box, FormControl, Grid, IconButton, InputLabel, MenuItem, Select, Snackbar, TextField } from "@mui/material";
@@ -9,7 +9,6 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { useNavigate } from "react-router-dom";
 import { RouterEnum } from "../../enum/router-enum.ts";
-import { theme } from "../../theme.ts";
 import CloseIcon from "@mui/icons-material/Close";
 import { CustomButton } from "../../global.styles.ts";
 
@@ -87,10 +86,9 @@ export const CourseEnrollForm = () => {
     <CourseEnrollFormContainer>
       <h2>Course Registration Form</h2>
       
-      <Box
+      <BoxForm
         component="form"
         onSubmit={handleSubmit}
-        style={{padding: theme["spacing-big"]}}
       >
         <Grid container spacing={3}>
           <Grid item xs={12} md={8}>
@@ -203,7 +201,7 @@ export const CourseEnrollForm = () => {
           </Grid>
         
         </Grid>
-      </Box>
+      </BoxForm>
       
       <Box sx={{width: 500}}>
         <Snackbar
