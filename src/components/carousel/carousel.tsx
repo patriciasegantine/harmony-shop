@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
@@ -13,6 +13,7 @@ import costumerTwo from "../../assets/img/costumer/costumer-two.png";
 import costumerThree from "../../assets/img/costumer/costumer-three.png";
 import costumerFour from "../../assets/img/costumer/costumer-four.png";
 import costumerFive from "../../assets/img/costumer/costumer-five.png";
+import { MainContext } from "../../use-context/main-context.tsx";
 
 interface ICustomerReview {
   id: number
@@ -20,13 +21,6 @@ interface ICustomerReview {
   text: string
   rating: number
 }
-
-// interface Interface {
-//   setOpen: React.Dispatch<boolean>
-//   projects: myProjectsInterface[]
-//   setProjectIndex: React.Dispatch<number>
-//   slideQuantity: number
-// }
 
 const customerReview: ICustomerReview[] = [
   {
@@ -63,21 +57,9 @@ const customerReview: ICustomerReview[] = [
 
 export const CarouselProducts: React.FC<any> = () => {
   
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth)
-  
   const [slidesPerView, setSlidesPerView] = useState<number>(1)
   
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth)
-    }
-    
-    window.addEventListener('resize', handleResize)
-    
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
+  const {windowWidth} = useContext(MainContext)
   
   useEffect(() => {
     if (windowWidth < 768) {

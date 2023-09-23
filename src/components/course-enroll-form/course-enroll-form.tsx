@@ -3,9 +3,18 @@ import React, { useEffect, useState } from 'react';
 import { CourseEnrollFormContainer } from "./course-enroll-form.styles.ts";
 import { Dayjs } from 'dayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { Box, FormControl, Grid, InputLabel, MenuItem, Select, TextField, ThemeProvider } from "@mui/material";
+import {
+  Box,
+  FormControl,
+  Grid, IconButton,
+  InputLabel,
+  MenuItem,
+  Select,
+  Snackbar,
+  TextField,
+  ThemeProvider
+} from "@mui/material";
 
-import { ModalButton } from "../course-modal/course-modal.styles.ts";
 import { muiTheme } from "../../muiTheme.ts";
 import { coursesInfo } from "../../pages/courses/coursesInfo.ts";
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -13,11 +22,23 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { useNavigate } from "react-router-dom";
 import { RouterEnum } from "../../enum/router-enum.ts";
 import { theme } from "../../theme.ts";
+import CloseIcon from "@mui/icons-material/Close";
+import { CustomButton } from "../../global.styles.ts";
 
 interface FormData {
   name: string
   email: string
-  message: string
+  DBO: string
+  address: string
+  phone: string
+}
+
+const InitialFormDetails = {
+  name: '',
+  email: '',
+  DBO: '',
+  address: '',
+  phone: ''
 }
 
 export const CourseEnrollForm = () => {
@@ -26,37 +47,53 @@ export const CourseEnrollForm = () => {
   
   const [isDisabled, setIsDisabled] = useState<boolean>(false)
   const [value, setValue] = useState<Dayjs | null>();
-  const [dataForm, setDataForm] = useState<FormData>({
-    name: '',
-    email: '',
-    message: ''
-  })
+  const [openMessage, setOpenMessage] = useState<boolean>(false)
+  const [FormDetails, setFormDetails] = useState<FormData>(InitialFormDetails)
+  const [isLoading, setIsLoading] = useState<boolean>(false)
   
-  const onChangeInputValue = (value: string, type: 'name' | 'email' | 'message') => {
-    
-    const newValue = {...dataForm, [type]: value}
-    
-    setDataForm(newValue)
+  const onChangeInputValue = (value: string, type: 'name' | 'email' | 'address' | 'phone' | 'DBO' ) => {
+    setFormDetails({...FormDetails, [type]: value})
   }
   
   const handleSubmit = (e: { preventDefault: () => void; }) => {
-    e.preventDefault();
-  };
+    e.preventDefault()
+    setIsLoading(true)
+    
+    setTimeout( () => {
+      setOpenMessage(true)
+      setIsLoading(false)
+    }, 2000);
+    
+    setTimeout( () => {
+      navigate(RouterEnum.courses)
+    }, 4000);
+    
+  }
+  
+  const handleCloseMessage = () => {
+    setOpenMessage(!openMessage)
+  }
+  
+  const action = (
+    <IconButton
+      size="small"
+      aria-label="close"
+      color="inherit"
+      onClick={handleCloseMessage}
+    >
+      <CloseIcon fontSize="small" />
+    </IconButton>
+  );
   
   useEffect(() => {
-    
-    const isFieldsFilled = dataForm.name !== '' && dataForm.email !== '' && dataForm.message !== ''
+    const isFieldsFilled = FormDetails.name !== '' && FormDetails.email !== '' && FormDetails.DBO !== ''
     
     if (isFieldsFilled) {
       setIsDisabled(false)
     } else {
       setIsDisabled(true)
     }
-  }, [dataForm]);
-  
-  useEffect(() => {
-  
-  }, []);
+  }, [FormDetails]);
   
   return (
     <CourseEnrollFormContainer>
@@ -74,7 +111,7 @@ export const CourseEnrollForm = () => {
                 id="outlined-controlled"
                 label="Name"
                 variant="outlined"
-                value={dataForm.name}
+                value={FormDetails.name}
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                   onChangeInputValue(event.target.value, 'name');
                 }}
@@ -100,9 +137,9 @@ export const CourseEnrollForm = () => {
               <TextField
                 id="outlined-controlled"
                 label="Address"
-                value={dataForm.message}
+                value={FormDetails.address}
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                  onChangeInputValue(event.target.value, 'message');
+                  onChangeInputValue(event.target.value, 'address');
                 }}
                 fullWidth={true}
               />
@@ -112,9 +149,9 @@ export const CourseEnrollForm = () => {
               <TextField
                 id="outlined-controlled"
                 label="Email"
-                value={dataForm.message}
+                value={FormDetails.email}
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                  onChangeInputValue(event.target.value, 'message');
+                  onChangeInputValue(event.target.value, 'email');
                 }}
                 fullWidth={true}
               />
@@ -124,9 +161,9 @@ export const CourseEnrollForm = () => {
               <TextField
                 id="outlined-controlled"
                 label="Phone"
-                value={dataForm.message}
+                value={FormDetails.phone}
                 onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                  onChangeInputValue(event.target.value, 'message');
+                  onChangeInputValue(event.target.value, 'phone');
                 }}
                 fullWidth={true}
               />
@@ -168,16 +205,30 @@ export const CourseEnrollForm = () => {
               </FormControl>
             </Grid>
           
+          <Grid item xs={12}>
+            <CustomButton
+              disabled={!isDisabled}
+              type={"submit"}
+              loading={isLoading}
+            >
+              submite
+            </CustomButton>
+          </Grid>
           
           </Grid>
-          <ModalButton
-            onClick={() => navigate(RouterEnum.courses)}
-            disabled={isDisabled}
-          >
-            submite
-          </ModalButton>
         </Box>
       </ThemeProvider>
+      
+      <Box sx={{ width: 500 }}>
+        <Snackbar
+          autoHideDuration={5000}
+          anchorOrigin={{vertical: "top", horizontal: "right"}}
+          open={openMessage}
+          onClose={handleCloseMessage}
+          message={<> Success </>}
+          action={action}
+        />
+      </Box>
     </CourseEnrollFormContainer>
   );
 };

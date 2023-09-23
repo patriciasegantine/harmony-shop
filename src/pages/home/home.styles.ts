@@ -13,7 +13,7 @@ export const HomeBlock = styled.section`
   margin-bottom: ${theme["spacing-regular"]};
 `
 
-export const HomeDividerHeader = styled.h2`
+export const HomeDividerHeader = styled.span`
   padding: ${theme["spacing-small"]};
   text-align: center;
   margin-bottom: ${theme["spacing-small"]};
