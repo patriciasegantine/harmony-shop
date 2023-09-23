@@ -30,8 +30,9 @@ export const Courses = () => {
         effectively. Begin your journey of wellbeing and beauty at home with Harmony.</p>
       {
         coursesInfo.map((item, index) =>
-          (<CoursesContent>
-              <Grid container key={item.id}>
+          (
+            <CoursesContent key={item.id}>
+              <Grid container>
                 <Grid item xs={12} md={6}>
                   <img src={item.img} alt=""/>
                 </Grid>

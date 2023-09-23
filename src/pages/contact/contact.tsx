@@ -14,11 +14,11 @@ export const Contact = () => {
       
       <Grid container alignItems={"flex-end"}>
         
-        <Grid xs={12} md={7}>
+        <Grid item xs={12} md={7}>
           <ContactForm/>
         </Grid>
         
-        <Grid xs={12} md={5}>
+        <Grid item xs={12} md={5}>
           <ContactInfo/>
         </Grid>
       
