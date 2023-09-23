@@ -6,7 +6,7 @@ import { FlexContainer, HeaderContainer, HeaderContent, Logo, MobileButton, Styl
 import { MenuDrawer } from "../menu-drawer/menu-drawer.tsx";
 import { IconButton } from "@mui/material";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { Login } from "../../assets/login/login.tsx";
+import { Login } from "../login/login.tsx";
 import { PlusOne } from "@mui/icons-material";
 
 export const Header = () => {
@@ -69,22 +69,22 @@ export const Header = () => {
         
         <FlexContainer>
           <IconButton onClick={() => setCartQuantity(cartQuantity + 1)}>
-            <PlusOne fontSize={"medium"} />
+            <PlusOne fontSize={"medium"}/>
           </IconButton>
           
           <IconButton aria-label="cart">
             <StyledBadge
               badgeContent={cartQuantity}
               color="secondary">
-              <ShoppingCartIcon fontSize={"medium"} />
+              <ShoppingCartIcon fontSize={"medium"}/>
             </StyledBadge>
           </IconButton>
           
           <Login/>
-          
-          
-        </FlexContainer>
         
+        
+        </FlexContainer>
+      
       </HeaderContent>
       
       <MenuDrawer

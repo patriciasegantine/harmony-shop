@@ -8,11 +8,11 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { CarouselContainer } from "./carousel.styles.ts";
 import { ReviewCard } from "../review-card/review-card.tsx";
-import costumerOne from "../../assets/img/costumer-one.png";
-import costumerTwo from "../../assets/img/costumer-two.png";
-import costumerThree from "../../assets/img/costumer-three.png";
-import costumerFour from "../../assets/img/costumer-four.png";
-import costumerFive from "../../assets/img/costumer-five.png";
+import costumerOne from "../../assets/img/costumer/costumer-one.png";
+import costumerTwo from "../../assets/img/costumer/costumer-two.png";
+import costumerThree from "../../assets/img/costumer/costumer-three.png";
+import costumerFour from "../../assets/img/costumer/costumer-four.png";
+import costumerFive from "../../assets/img/costumer/costumer-five.png";
 
 interface ICustomerReview {
   id: number

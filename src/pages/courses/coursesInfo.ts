@@ -1,7 +1,7 @@
-import beautiful from "../../assets/img/beautiful.png";
-import cosmetology from "../../assets/img/cosmetology.png";
-import skincare from "../../assets/img/skincare.png";
-import holistic from "../../assets/img/holistic.png";
+import beautiful from "../../assets/img/courses/beautiful.png";
+import cosmetology from "../../assets/img/courses/cosmetology.png";
+import skincare from "../../assets/img/courses/skincare.png";
+import holistic from "../../assets/img/courses/holistic.png";
 
 export interface CourseInterface {
   id: string

@@ -1,8 +1,8 @@
 import { HomeBlock, HomeDividerHeader, HomeSubtitle, HomeTitle } from "../../pages/home/home.styles.ts";
 import { Card, CardActionArea, CardContent, CardMedia, Grid } from "@mui/material";
-import beautiful from "../../assets/img/beautiful.png";
-import cosmetology from "../../assets/img/cosmetology.png";
-import holistic from "../../assets/img/holistic.png";
+import beautiful from "../../assets/img/courses/beautiful.png";
+import cosmetology from "../../assets/img/courses/cosmetology.png";
+import holistic from "../../assets/img/courses/holistic.png";
 import { useNavigate } from "react-router-dom";
 import { RouterEnum } from "../../enum/router-enum.ts";
 import { HomeCourseTitle } from "./home-courses.styles.ts";

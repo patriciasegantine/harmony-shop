@@ -4,9 +4,9 @@ import { HomeProductBox } from "./home-products.styles.ts";
 import { CustomButton } from "../../global.styles.ts";
 import { useNavigate } from "react-router-dom";
 
-import productOne from '../../assets/products/product-01.png'
-import productTwo from '../../assets/products/product-02.png'
-import productThree from '../../assets/products/product-03.png'
+import productOne from '../../assets/img/products/product-01.png'
+import productTwo from '../../assets/img/products/product-02.png'
+import productThree from '../../assets/img/products/product-03.png'
 import { ProductDescription, ProductTitle } from "../bestseller-products/bestseller-products.styles.ts";
 
 interface IProducts {
