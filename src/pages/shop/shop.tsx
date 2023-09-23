@@ -1,11 +1,10 @@
-// import React from 'react';
-
 import { ShopContainer } from "./shop.styles.ts";
+import comingSoon from '../../assets/img/coming-soon.png'
 
 export const Shop = () => {
   return (
     <ShopContainer>
-      Shop
+      <img src={comingSoon} alt="Coming Soon" style={{width: '100%'}}/>
     </ShopContainer>
   );
 };
