@@ -1,4 +1,4 @@
-import bgBanner from '../../assets/img/banner-two.png'
+import bgBanner from '../../assets/img/banner-one.png'
 import styled from "styled-components";
 import { theme } from "../../theme.ts";
 

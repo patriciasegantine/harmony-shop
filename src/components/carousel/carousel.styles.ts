@@ -3,21 +3,13 @@ import { theme } from "../../theme.ts";
 
 export const CarouselContainer = styled.div`
   margin-bottom: ${theme["spacing-regular"]};
-`
 
-export const CardBoxImg = styled.div`
-  width: 100%;
-  border-radius: 10px;
-  padding: ${theme["spacing-regular"]};
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: ${theme["color-highlight"]};
+  }
 
-  // img {
-  width: 100%;
-  //   border-radius: 10px;
-  //
-  //   &:hover {
-  //     scale: 1.1;
-  //     transition: .5s;
-  //     cursor: pointer;
-  //   }
-  // }
+  .swiper-pagination-bullet {
+    background-color: ${theme["color-highlight"]};
+  }
 `
