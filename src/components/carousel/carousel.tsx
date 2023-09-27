@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
@@ -13,7 +13,7 @@ import costumerTwo from "../../assets/img/costumer/costumer-two.png";
 import costumerThree from "../../assets/img/costumer/costumer-three.png";
 import costumerFour from "../../assets/img/costumer/costumer-four.png";
 import costumerFive from "../../assets/img/costumer/costumer-five.png";
-import { MainContext } from "../../use-context/main-context.tsx";
+import { useMainContext } from "../../use-context/main-context.tsx";
 
 interface ICustomerReview {
   id: number
@@ -59,7 +59,7 @@ export const CarouselProducts: React.FC<any> = () => {
   
   const [slidesPerView, setSlidesPerView] = useState<number>(1)
   
-  const {windowWidth} = useContext(MainContext)
+  const {windowWidth} = useMainContext()
   
   useEffect(() => {
     if (windowWidth < 768) {

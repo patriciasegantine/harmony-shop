@@ -10,7 +10,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { useNavigate } from "react-router-dom";
 import { RouterEnum } from "../../enum/router-enum.ts";
 import CloseIcon from "@mui/icons-material/Close";
-import { CustomButton } from "../../global.styles.ts";
+import { CustomButton, SectionTitle } from "../../global.styles.ts";
 
 interface FormData {
   name: string
@@ -84,7 +84,7 @@ export const CourseEnrollForm = () => {
   
   return (
     <CourseEnrollFormContainer>
-      <h2>Course Registration Form</h2>
+      <SectionTitle>Course Registration Form</SectionTitle>
       
       <BoxForm
         component="form"

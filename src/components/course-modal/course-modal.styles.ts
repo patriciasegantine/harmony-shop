@@ -10,7 +10,8 @@ export const modalStyle = {
   transform: 'translate(-50%, -50%)',
   bgcolor: 'background.paper',
   boxShadow: 24,
-  p: 6,
+  p: {xs: 2, md: 6},
+  width: {xs: 350, md: 700}
 };
 
 export const ModalContent = styled.div``

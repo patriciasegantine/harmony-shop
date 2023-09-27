@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 interface IMainContext {
   windowWidth: number
   setWindowWidth: React.Dispatch<number>
 }
 
-// @ts-ignore
-export const MainContext = React.createContext<IMainContext>()
+export const MainContext = React.createContext<IMainContext | undefined>(undefined)
 
 export const MainProvider = ({children}: any) => {
   
@@ -33,4 +32,12 @@ export const MainProvider = ({children}: any) => {
       {children}
     </MainContext.Provider>
   )
+}
+
+export function useMainContext() {
+  const context = useContext(MainContext);
+  if (!context) {
+    throw new Error("useMainContext must be used within a MainProvider");
+  }
+  return context;
 }
