@@ -11,17 +11,28 @@ export const CoursesContainer = styled(SectionContainer)`
 
 export const CoursesContent = styled.div`
   margin-top: ${theme["spacing-big"]};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   h3 {
     text-transform: uppercase;
 
+    &::before {
+      content: "❤";
+      height: .5px;
+      margin-right: ${theme["spacing-extra-small"]};
+      color: ${theme["color-detached"]};
+    }
+
     &::after {
       content: "";
       display: block;
-      width: 100px;
       height: .5px;
-      margin: ${theme["spacing-extra-small"]} 0 ${theme["spacing-regular"]};
+      margin-right: ${theme["spacing-extra-small"]};
+      width: 100px;
       background: ${theme["color-detached"]};
+      margin-top: ${theme["spacing-extra-small"]};
     }
   }
 

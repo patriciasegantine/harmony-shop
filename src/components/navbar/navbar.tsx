@@ -63,7 +63,7 @@ export const Navbar: React.FC<NaveBar> = ({isMobileOpen, handleMobileToggle}) =>
             <NavLinkComponent
               to={item.router}
               key={item.name}
-              active={active === item.router}
+              active={active === item.router ? 'active' : 'inactive'}
               onClick={handleLink}
             >
               {

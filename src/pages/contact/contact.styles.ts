@@ -4,20 +4,6 @@ import { theme } from "../../theme.ts";
 
 export const ContactContainer = styled(SectionContainer)``
 
-export const ContactTitle = styled.h2`
-  margin-top: ${theme["spacing-big"]};
-  margin-bottom: ${theme["spacing-regular"]};
-
-  &::after {
-    content: "";
-    display: block;
-    width: 100px;
-    height: .5px;
-    margin: ${theme["spacing-extra-small"]} 0 ${theme["spacing-regular"]};
-    background: ${theme["color-detached"]};
-  }
-`
-
 export const MyInformation = styled.div`
   border-radius: ${theme['border-radius-primary']};
   color: ${theme["color-detached"]};

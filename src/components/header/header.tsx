@@ -85,7 +85,7 @@ export const Header = () => {
           
           <IconButton aria-label="cart">
             <StyledBadge
-              badgeContent={3}
+              badgeContent={0}
               color="secondary">
               <ShoppingCartIcon fontSize={"medium"}/>
             </StyledBadge>

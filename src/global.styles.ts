@@ -27,8 +27,6 @@ export const GlobalStyle = createGlobalStyle`
       font-size: 90%;
     }
   }
-
-
 `
 
 export const SectionContainer = styled.section`
@@ -42,8 +40,17 @@ export const SectionContainer = styled.section`
 `
 
 export const SectionTitle = styled.h2`
+  margin-top: ${theme["spacing-big"]};
   margin-bottom: ${theme["spacing-regular"]};
 
+  &::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: .5px;
+    margin: ${theme["spacing-extra-small"]} 0 ${theme["spacing-regular"]};
+    background: ${theme["color-detached"]};
+  }
 `
 
 export const PrimaryButton = styled.button`
@@ -64,4 +71,8 @@ export const CustomButton = styled(LoadingButton)`
   width: 100%;
   display: flex;
   align-items: center;
+`
+
+export const ContactTitle = styled.h2`
+
 `

@@ -18,9 +18,7 @@ export const HeaderNavbar = styled.header<{
   }
 
 `
-export const NavLinkComponent = styled(NavLink)<{
-  active: boolean
-}>`
+export const NavLinkComponent = styled(NavLink)<{ active: 'active' | 'inactive' }>`
   cursor: pointer;
   text-decoration: none;
   padding: .5rem 1rem;
@@ -31,7 +29,7 @@ export const NavLinkComponent = styled(NavLink)<{
   font-weight: 600;
   color: ${theme["color-neutral-dark"]};
 
-  ${props => props.active && css`
+  ${props => props.active === 'active' && css`
     font-size: ${theme["font-size-m"]};
   `}
   &:hover {

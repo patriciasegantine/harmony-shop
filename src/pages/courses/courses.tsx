@@ -1,6 +1,6 @@
 import { CustomButton, SectionTitle } from "../../global.styles.ts";
 import { CourseContent, CoursesContainer, CoursesContent } from "./courses.styles.ts";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CourseInterface, coursesInfo } from "./coursesInfo.ts";
 import { CourseModal } from "../../components/course-modal/course-modal.tsx";
 import { Grid } from "@mui/material";
@@ -16,6 +16,10 @@ export const Courses = () => {
     
     setCurrentCourse(coursesInfo[index])
   }
+  
+  useEffect(() => {
+    window.scrollTo({top: 0, left: 0, behavior: "smooth"})
+  }, []);
   
   return (
     <CoursesContainer>
