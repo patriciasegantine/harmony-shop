@@ -33,7 +33,7 @@ export const HeaderContent = styled.header`
   img {
     height: 60px;
   }
-s`
+`
 
 export const Logo = styled.a`
   cursor: pointer;
@@ -61,8 +61,7 @@ export const StyledBadge = styled(Badge)<BadgeProps>(() => ({
   },
 }));
 
-
 export const FlexContainer = styled.div`
   display: flex;
-  gap: ${theme["spacing-small"]};
+  gap: ${theme["spacing-extra-small"]};
 `

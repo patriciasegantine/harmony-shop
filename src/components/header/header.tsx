@@ -5,6 +5,7 @@ import { FlexContainer, HeaderContainer, HeaderContent, Logo, StyledBadge } from
 import { MenuDrawer } from "../menu-drawer/menu-drawer.tsx";
 import { IconButton } from "@mui/material";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Login } from "../login/login.tsx";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useNavigate } from "react-router-dom";
@@ -82,16 +83,19 @@ export const Header = () => {
         }
         
         <FlexContainer>
+          <Login/>
           
           <IconButton aria-label="cart">
             <StyledBadge
               badgeContent={0}
               color="secondary">
-              <ShoppingCartIcon fontSize={"medium"}/>
+              <FavoriteIcon fontSize={"medium"}/>
             </StyledBadge>
           </IconButton>
           
-          <Login/>
+          <IconButton aria-label="cart" onClick={handleOpenCartModal}>
+            <ShoppingCartIcon fontSize={"medium"}/>
+          </IconButton>
         
         </FlexContainer>
       

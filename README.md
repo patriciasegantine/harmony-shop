@@ -24,7 +24,7 @@ daily care and well-being.
 To run this project locally, follow the steps below:
 
 1. Make sure you have Node.js and npm installed on your machine.
-2. Clone this repository .
+2. Clone from Github ``git clone https://github.com/patriciasegantine/harmony-shop``
 3. Navigate to the project directory.
 4. Install the dependencies by running the following command: ```` npm install ````
 
