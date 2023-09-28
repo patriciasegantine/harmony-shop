@@ -57,6 +57,10 @@ export const Header = () => {
     }
   }, [windowWidth])
   
+  const handleOpenCartModal = () => {
+    console.log('cart is open')
+  };
+  
   return (
     <HeaderContainer fixed={isMenuFixed ? 'fixed' : 'not-fixed'}>
       <HeaderContent>
