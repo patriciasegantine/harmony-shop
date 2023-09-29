@@ -9,18 +9,31 @@ import bgBannerOne from "../../assets/img/shop-banner-1.png";
 import bgBannerTwo from "../../assets/img/shop-banner-2.png";
 import bgBannerThree from "../../assets/img/shop-banner-3.png";
 
-const shopBanner = [
+import mobileBannerOne from "../../assets/img/banners/mobile-banner-1.png";
+import mobileBannerTwo from "../../assets/img/banners/mobile-banner-2.png";
+import mobileBannerThree from "../../assets/img/banners/mobile-banner-3.png";
+
+interface IShopBanner {
+  id: number
+  banner: string
+  mobile: string
+}
+
+export const shopBanner: IShopBanner[] = [
   {
     id: 1,
-    banner: bgBannerOne
+    banner: bgBannerOne,
+    mobile: mobileBannerOne
   },
   {
     id: 2,
-    banner: bgBannerTwo
+    banner: bgBannerTwo,
+    mobile: mobileBannerTwo
   },
   {
     id: 3,
-    banner: bgBannerThree
+    banner: bgBannerThree,
+    mobile: mobileBannerThree
   }
 ]
 
@@ -50,9 +63,7 @@ export const CarouselBanner: React.FC<any> = () => {
                 virtualIndex={index}
                 draggable
               >
-                <ImgContainer>
-                  <img src={item.banner} alt=""/>
-                </ImgContainer>
+                <ImgContainer url={item.banner} mobile={item.mobile}/>
               </SwiperSlide>
             )
           })

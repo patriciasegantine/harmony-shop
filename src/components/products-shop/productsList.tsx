@@ -12,6 +12,7 @@ interface IProductsList {
   section: 'Body' | 'Face' | 'Decoration'
   value: number
   img: string
+  quantity: number
 }
 
 export const productList: IProductsList[] = [
@@ -20,49 +21,56 @@ export const productList: IProductsList[] = [
     name: 'Product One',
     section: "Body",
     value: 20,
-    img: productOne
+    img: productOne,
+    quantity: 10
   },
   {
     id: 2,
     name: 'Product Two',
     section: "Face",
     value: 20,
-    img: productTwo
+    img: productTwo,
+    quantity: 1
   },
   {
     id: 3,
     name: 'Product For',
     section: "Face",
     value: 20,
-    img: productThree
+    img: productThree,
+    quantity: 0
   },
   {
     id: 4,
     name: 'Product Five',
     section: "Body",
     value: 20,
-    img: productFour
+    img: productFour,
+    quantity: 3
   },
   {
     id: 5,
     name: 'Product Five',
     section: "Body",
     value: 20,
-    img: productFive
+    img: productFive,
+    quantity: 0
   },
   {
     id: 6,
     name: 'Product Six',
     section: "Body",
     value: 20,
-    img: productSix
+    img: productSix,
+    quantity: 5
   },
   {
     id: 7,
     name: 'Product Seven',
     section: "Body",
     value: 20,
-    img: productSeven
+    img: productSeven,
+    quantity: 10
   },
 
 ]

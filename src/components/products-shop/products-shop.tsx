@@ -9,7 +9,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { theme } from "../../theme.ts";
 import { productList } from "./productsList.tsx";
-import { LocalGroceryStore } from '@mui/icons-material';
+import { LocalGroceryStore } from "@mui/icons-material";
+import { Stock, StockValue } from "./products-shop.styles.ts";
 
 export const ProductsShop = () => {
   return (
@@ -18,7 +19,7 @@ export const ProductsShop = () => {
       <Container sx={{py: 8}}>
         <Grid container spacing={2}>
           {productList.map((product) => (
-            <Grid item key={product.id} xs={12} sm={6} md={4}>
+            <Grid item key={product.id} xs={6} sm={4} md={3}>
               <Card
                 sx={{height: '100%', display: 'flex', flexDirection: 'column'}}
               >
@@ -32,43 +33,40 @@ export const ProductsShop = () => {
                     {product.name}
                   </Typography>
                   
-                  <Typography gutterBottom textTransform={"uppercase"} fontSize={theme["font-size-xs"]}>
-                    {product.section}
+                  <Typography gutterBottom fontSize={theme["font-size-s"]}>
+                    <Stock stock={product.quantity <= 0 ? 'soldOut' : 'inStock'}>
+                      {product.quantity <= 0 ? 'sold out' : 'in stock'}
+                    </Stock>
                   </Typography>
                   
-                  <Typography>
-                    This is a media card. You can use this section to describe the
-                    content.
-                  </Typography>
-                  
-                  
-                  <Grid container display={'flex'} alignItems={'center'}>
+                  <Grid container display={'flex'} alignItems={'center'} marginTop={2}>
                     <Grid item xs={6}>
                       <CardActions>
-                        <Button variant="outlined" startIcon={<LocalGroceryStore/>} size={"small"}>
+                        <Button
+                          variant="outlined"
+                          startIcon={<LocalGroceryStore/>}
+                          size={"small"}
+                          disabled={product.quantity <= 0}
+                        >
                           add
                         </Button>
                       </CardActions>
                     </Grid>
                     
                     <Grid item xs={6} display={'flex'} justifyContent={"flex-end"}>
-                      <Typography fontSize={theme["font-size-m"]} fontWeight={"bold"} p={1}>
-                        {product.value.toLocaleString(
-                          'en-GB', {
-                            style: "currency",
-                            currency: "GBP"
-                          }
-                        )}
+                      <Typography fontSize={theme["font-size-m"]} fontWeight={"bold"}>
+                        <StockValue stock={product.quantity <= 0 ? 'soldOut' : 'inStock'}>
+                          {product.value.toLocaleString(
+                            'en-GB', {
+                              style: "currency",
+                              currency: "GBP"
+                            }
+                          )}
+                        </StockValue>
                       </Typography>
                     </Grid>
-                  
-                  
                   </Grid>
-                
-                
                 </CardContent>
-              
-              
               </Card>
             </Grid>
           ))}

@@ -15,10 +15,22 @@ export const CarouselContainer = styled.div`
 
 `
 
-export const ImgContainer = styled.div`
+export const ImgContainer = styled.div<{ url: string, mobile: string }>`
+  border-radius: ${theme["border-radius-primary"]};
+  background-image: url(${props => props.url});
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 350px;
+
   img {
-    border-radius: ${theme["border-radius-primary"]};
     overflow: hidden;
     width: 100%;
+  }
+
+  @media (max-width: ${theme.tablet}) {
+    background-image: url(${props => props.mobile});
+    height: 280px;
   }
 `
