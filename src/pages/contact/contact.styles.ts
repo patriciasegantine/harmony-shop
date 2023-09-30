@@ -15,7 +15,7 @@ export const MyInformation = styled.div`
     text-decoration: none;
   }
 
-  @media (max-width: ${theme.tablet}) {
+  @media (max-width: ${theme.tablet}px) {
     padding-left: 0;
     padding-top: ${theme["spacing-regular"]};
   }

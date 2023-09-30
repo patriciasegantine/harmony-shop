@@ -29,7 +29,7 @@ export const ImgContainer = styled.div<{ url: string, mobile: string }>`
     width: 100%;
   }
 
-  @media (max-width: ${theme.tablet}) {
+  @media (max-width: ${theme.tablet}px) {
     background-image: url(${props => props.mobile});
     height: 280px;
   }

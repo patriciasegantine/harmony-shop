@@ -7,7 +7,7 @@ export const ProductDescription = styled.div`
   color: ${theme["color-neutral-dark"]};
   margin-bottom: ${theme["spacing-small"]};
 
-  @Media (min-width: ${theme.laptop}) {
+  @Media (min-width: ${theme.laptop}px) {
     height: 100px;
   }
 `

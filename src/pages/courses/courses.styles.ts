@@ -47,7 +47,7 @@ export const CourseContent = styled.div`
   padding-bottom: 10px;
   padding-left: ${theme["spacing-small"]};
 
-  @media (max-width: ${theme.tablet}) {
+  @media (max-width: ${theme.tablet}px) {
     margin-top: ${theme["spacing-regular"]};
     padding-left: 0;
   }

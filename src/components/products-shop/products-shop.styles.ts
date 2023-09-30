@@ -10,7 +10,17 @@ export const Stock = styled.div<{
 export const StockValue = styled.div<{
   stock: 'soldOut' | 'inStock'
 }>`
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
   ${props => props.stock === 'soldOut' && css`
     color: ${theme["color-primary"]};
-  `}
+  `};
+
+  @media (max-width: ${theme.tablet}px) {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
 `

@@ -7,7 +7,7 @@ export const CourseEnrollFormContainer = styled(SectionContainer)``
 
 export const BoxForm = styled(Box)`
 
-  @media (min-width: ${theme.laptop}) {
+  @media (min-width: ${theme.laptop}px) {
     max-width: 70%;
   }
 `

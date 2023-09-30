@@ -31,7 +31,7 @@ export const Column = styled(Grid)`
     justify-content: flex-end;
   }
 
-  @media (max-width: ${theme.laptop}) {
+  @media (max-width: ${theme.laptop}px) {
     justify-content: center;
 
     &:first-child, &:last-child {

@@ -15,7 +15,7 @@ export const BannerContainer = styled.div`
     display: none;
   }
 
-  @media (min-width: ${theme.laptop}) {
+  @media (min-width: ${theme.laptop}px) {
     height: 450px;
 
     p {
@@ -35,7 +35,7 @@ export const BannerContent = styled.div`
   transform: translate(-50%, -0%);
 
 
-  @media (min-width: ${theme.laptop}) {
+  @media (min-width: ${theme.laptop}px) {
     top: 50%;
     left: 40%;
     transform: translate(-0%, -0%);

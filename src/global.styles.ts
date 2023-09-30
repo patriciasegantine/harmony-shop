@@ -23,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
       background-color: ${theme["color-highlight"]};
     }
 
-    @media (max-width: ${theme.laptop}) {
+    @media (max-width: ${theme.laptop}px) {
       font-size: 90%;
     }
   }
