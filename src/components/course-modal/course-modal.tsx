@@ -19,8 +19,6 @@ interface CourseModalInterface {
   currentCourse: CourseInterface | undefined
 }
 
-
-
 export const CourseModal: React.FC<CourseModalInterface> = ({open, setOpen, currentCourse}) => {
   
   const handleClose = () => setOpen(false);
@@ -30,7 +28,7 @@ export const CourseModal: React.FC<CourseModalInterface> = ({open, setOpen, curr
   const handleEnrollCourse = (name: string | undefined) => {
     setOpen(!open)
     console.log('name', name)
-    navigate(RouterEnum["enroll-course"])
+    navigate(RouterEnum.enrollCourse)
   };
   
   return (
