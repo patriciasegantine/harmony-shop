@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { ReactNode, useContext, useEffect, useState } from "react";
 
 interface IMainContext {
   windowWidth: number
@@ -7,7 +7,7 @@ interface IMainContext {
 
 export const MainContext = React.createContext<IMainContext | undefined>(undefined)
 
-export const MainProvider = ({children}: any) => {
+export const MainProvider = ({children}: { children: ReactNode }) => {
   
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
   

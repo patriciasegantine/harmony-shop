@@ -14,8 +14,19 @@ export const Contact = () => {
   
   return (
     <ContactContainer>
-      <SectionTitle>Get in touch</SectionTitle>
+      <div>
+        <h2>Welcome to our contact section!</h2>
+        <p>
+          Before reaching out to us, we recommend checking our FAQ for quick answers. If your question isn't there, we
+          are
+          available via email or through our convenient contact form.
+        </p>
+      </div>
       
+      <SectionTitle>Popular FaQs</SectionTitle>
+      <PopularFaQs/>
+      
+      <SectionTitle>Get in touch</SectionTitle>
       <Grid container alignItems={"flex-end"}>
         <Grid item xs={12} md={7}>
           <ContactForm/>
@@ -25,9 +36,8 @@ export const Contact = () => {
           <ContactInfo/>
         </Grid>
       </Grid>
-      
-      <SectionTitle>Popular FaQs</SectionTitle>
-      <PopularFaQs/>
+    
+    
     </ContactContainer>
   );
 };
