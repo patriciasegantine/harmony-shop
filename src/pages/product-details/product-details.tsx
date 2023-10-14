@@ -6,6 +6,7 @@ import { ProductsStock } from "../../components/products-stock/products-stock.ts
 import { useParams } from "react-router-dom";
 import { ImageBox, ProductDetailsContainer } from "./product-details.styles.ts";
 import { Box, Rating } from "@mui/material";
+import { theme } from "../../theme.ts";
 
 export const ProductDetails = () => {
   
@@ -16,13 +17,17 @@ export const ProductDetails = () => {
   return (
     <ProductDetailsContainer>
       <Grid2 container>
-        <Grid2 xs={4} position={'relative'}>
+        <Grid2 xs={12} md={4} position={'relative'}>
           <ImageBox>
             <img src={product[0].img} alt=""/>
           </ImageBox>
         </Grid2>
         
-        <Grid2 xs={4} display={'flex'} flexDirection={'column'} justifyContent={'space-between'} paddingLeft={4}>
+        <Grid2
+          xs={12}
+          md={4}
+          display={'flex'} flexDirection={'column'} justifyContent={'space-between'}
+          sx={{marginLeft: {xs: 0, md: theme["spacing-small"]}}}>
           <Box>
             <h3>{product[0].name}</h3>
             <span>{product[0].description}</span>
@@ -44,7 +49,9 @@ export const ProductDetails = () => {
             </p>
           </Box>
           
-          <Box marginBottom={1}>
+          <Box
+            marginBottom={1}
+            sx={{paddingTop: {xs: theme["spacing-regular"]}}}>
             <Grid2 container rowSpacing={2}>
               <Grid2 xs={12}>
                 <Button
