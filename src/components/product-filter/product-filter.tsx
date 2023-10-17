@@ -4,7 +4,7 @@ import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import Drawer from "@mui/material/Drawer";
 import { Box, Divider, IconButton, Typography } from "@mui/material";
 import { DrawerHeader } from "./product-filter.styles.ts";
-import { useMainContext } from "../../use-context/main-context.tsx";
+import { useMainContext } from "../../context/main-context.tsx";
 import { theme } from "../../theme.ts";
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import { TreeView } from "@mui/x-tree-view";

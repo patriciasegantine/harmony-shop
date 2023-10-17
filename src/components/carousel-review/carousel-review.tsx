@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { CarouselContainer } from "./carousel-review.styles.ts";
 import { ReviewCard } from "../review-card/review-card.tsx";
-import { useMainContext } from "../../use-context/main-context.tsx";
+import { useMainContext } from "../../context/main-context.tsx";
 import { ICustomerReview } from "../customer-review/customer-review.tsx";
 
 interface ICarouselReview {

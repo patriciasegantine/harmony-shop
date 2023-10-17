@@ -5,7 +5,7 @@ import Pagination from '@mui/material/Pagination';
 import { Box } from "@mui/material";
 import { theme } from "../../theme.ts";
 import { ProductManager } from "../../components/product-manager/product-manager.tsx";
-import { FilterProvider } from "../../use-context/filter-context.tsx";
+import { FilterProvider } from "../../context/filter-context.tsx";
 
 export const Shop = () => {
   
