@@ -56,9 +56,7 @@ export const Header = () => {
     }
   }, [windowWidth])
   
-  const handleOpenCartModal = () => {
-    console.log('cart is open')
-  };
+  const handleGoToCart = () => navigate(RouterEnum.cart)
   
   return (
     <HeaderContainer fixed={isMenuFixed ? 'fixed' : 'not-fixed'}>
@@ -82,13 +80,17 @@ export const Header = () => {
         </Logo>
         
         {
-          !showMenuMobile && <Navbar isMobileOpen={isMobileOpen} handleMobileToggle={handleMobileToggle}/>
+          !showMenuMobile &&
+          <Navbar isMobileOpen={isMobileOpen} handleMobileToggle={handleMobileToggle}/>
         }
         
         <FlexContainer>
           <Login/>
           
-          <IconButton aria-label="cart" onClick={handleOpenCartModal}>
+          <IconButton
+            aria-label="cart"
+            onClick={handleGoToCart}
+          >
             <ShoppingCartIcon fontSize={"medium"}/>
           </IconButton>
         

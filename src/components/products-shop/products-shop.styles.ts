@@ -1,13 +1,13 @@
 import styled, { css } from "styled-components";
 import { theme } from "../../theme.ts";
 
-export const Stock = styled.div<{
+export const Stock = styled.span<{
   stock: 'soldOut' | 'inStock'
 }>`
   color: ${props => props.stock === 'inStock' ? 'green' : 'red'}
 `
 
-export const StockValue = styled.div<{
+export const StockValue = styled.span<{
   stock: 'soldOut' | 'inStock'
 }>`
 

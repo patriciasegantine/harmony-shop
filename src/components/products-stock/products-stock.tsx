@@ -13,10 +13,8 @@ const StockLabelEnum = {
 
 export const ProductsStock: React.FC<IProductsStock> = ({quantity}) => {
   return (
-    <div>
-      <Stock stock={quantity <= 0 ? 'soldOut' : 'inStock'}>
-        {quantity <= 0 ? StockLabelEnum.soldOut : StockLabelEnum.inStock}
-      </Stock>
-    </div>
+    <Stock stock={quantity <= 0 ? 'soldOut' : 'inStock'}>
+      {quantity <= 0 ? StockLabelEnum.soldOut : StockLabelEnum.inStock}
+    </Stock>
   );
 };
