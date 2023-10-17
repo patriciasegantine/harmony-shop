@@ -1,30 +1,22 @@
 import { SocialBox } from "./social-media.styles.ts";
-import { Facebook, Twitter, Instagram } from "@mui/icons-material";
+import { GitHub, LinkedIn } from "@mui/icons-material";
 
 export const SocialMedia = () => {
   return (
     
     <SocialBox>
-      <a href="https://www.facebook.com"
+      <a href="https://www.linkedin.com/in/patriciasegantine/"
          title={"Linkedin"}
          target='_blank'>
-     <Facebook fontSize={"large"}/>
+        <LinkedIn fontSize={"large"}/>
       </a>
       
       <a
-        href="https://twitter.com/"
+        href="https://github.com/patriciasegantine/harmony-shop"
         title={"Github"}
         target='_blank'
       >
-        <Twitter fontSize={"large"}/>
-      </a>
-      
-      <a
-        href="https://www.instagram.com/"
-        title={"Instagram"}
-        target='_blank'
-      >
-      <Instagram fontSize={"large"}/>
+        <GitHub fontSize={"large"}/>
       </a>
     </SocialBox>
   
