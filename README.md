@@ -10,12 +10,14 @@ daily care and well-being.
 ## Technologies Used
 
 - React
-- Vite
+- React Router Dom
+- Redux Toolkit
 - TypeScript
+- Axios
 - Styled Components
 - Material UI
+- Vite
 - Font Awesome Icons
-- React Router
 - Swiper
 - Vercel
 
