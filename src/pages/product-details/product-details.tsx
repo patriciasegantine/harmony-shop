@@ -1,7 +1,7 @@
 import Grid2 from "@mui/material/Unstable_Grid2";
 import { productList } from "../../components/products-shop/productsList.tsx";
 import Button from "@mui/material/Button";
-import { LocalGroceryStore } from "@mui/icons-material";
+import { FavoriteBorder, LocalGroceryStore } from "@mui/icons-material";
 import { ProductsStock } from "../../components/products-stock/products-stock.tsx";
 import { useParams } from "react-router-dom";
 import { ImageBox, ProductDetailsContainer } from "./product-details.styles.ts";
@@ -30,7 +30,6 @@ export const ProductDetails = () => {
           sx={{marginLeft: {xs: 0, md: theme["spacing-small"]}}}>
           <Box>
             <h3>{product[0].name}</h3>
-            <span>{product[0].description}</span>
             
             <Rating
               name="read-only"
@@ -69,7 +68,7 @@ export const ProductDetails = () => {
                 <Button
                   fullWidth
                   variant="outlined"
-                  startIcon={<LocalGroceryStore/>}
+                  startIcon={<FavoriteBorder/>}
                   size={"medium"}
                 >
                   add to favourite

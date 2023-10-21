@@ -6,6 +6,8 @@ import productFive from '../../assets/img/products/product-05.png'
 import productSix from '../../assets/img/products/product-06.png'
 import productSeven from '../../assets/img/products/product-07.png'
 
+// TODO: remove file
+
 interface IProductsList {
   id: number
   name: string
