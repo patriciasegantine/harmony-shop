@@ -8,12 +8,12 @@ import productSeven from '../../assets/img/products/product-07.png'
 
 // TODO: remove file
 
-interface IProductsList {
+export interface IProductsMockList {
   id: number
   name: string
   bestSeller: boolean
-  section: 'Body' | 'Face' | 'Decoration'
-  value: number
+  section: 'Body' | 'Face' | null
+  price: number
   img: string
   quantity: number
   description: string
@@ -21,13 +21,13 @@ interface IProductsList {
   review: string[]
 }
 
-export const productList: IProductsList[] = [
+export const productsMockList: IProductsMockList[] = [
   {
     id: 1,
     name: 'Organic Vitamin C Anti-Aging Serum',
     bestSeller: true,
     section: "Face",
-    value: 15,
+    price: 15,
     img: productOne,
     quantity: 10,
     description: 'Reveal your natural radiance with our organic vitamin C anti-aging serum',
@@ -39,7 +39,7 @@ export const productList: IProductsList[] = [
     name: 'Organic Chamomile Soap',
     bestSeller: true,
     section: "Body",
-    value: 10,
+    price: 10,
     img: productTwo,
     quantity: 1,
     description: 'Our organic chamomile soap is a gentle and soothing cleanser for your skin',
@@ -51,7 +51,7 @@ export const productList: IProductsList[] = [
     name: 'Organic Aloe Vera Serum',
     bestSeller: true,
     section: "Face",
-    value: 25,
+    price: 25,
     img: productThree,
     quantity: 10,
     description: 'Soothes and hydrates the skin, providing relief from irritation and sunburn',
@@ -63,7 +63,7 @@ export const productList: IProductsList[] = [
     name: 'Product Five',
     bestSeller: false,
     section: "Body",
-    value: 5,
+    price: 5,
     img: productFour,
     quantity: 3,
     description: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, rerum, sapiente. Aliquam facere quaerat ut? Eum molestias nisi tempora vero?',
@@ -75,7 +75,7 @@ export const productList: IProductsList[] = [
     name: 'Product Five',
     bestSeller: false,
     section: "Body",
-    value: 10,
+    price: 10,
     img: productFive,
     quantity: 0,
     description: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, rerum, sapiente. Aliquam facere quaerat ut? Eum molestias nisi tempora vero?',
@@ -87,7 +87,7 @@ export const productList: IProductsList[] = [
     name: 'Product Six',
     section: "Body",
     bestSeller: false,
-    value: 20,
+    price: 20,
     img: productSix,
     quantity: 5,
     description: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, rerum, sapiente. Aliquam facere quaerat ut? Eum molestias nisi tempora vero?',
@@ -99,7 +99,7 @@ export const productList: IProductsList[] = [
     name: 'Product Seven',
     bestSeller: false,
     section: "Body",
-    value: 20,
+    price: 20,
     img: productSeven,
     quantity: 10,
     description: ' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, rerum, sapiente. Aliquam facere quaerat ut? Eum molestias nisi tempora vero?',

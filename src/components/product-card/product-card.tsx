@@ -48,7 +48,7 @@ export const ProductCard: React.FC<IProductCard> = ({onClick, img, name, quantit
             <Grid item xs={6} display={'flex'} justifyContent={"flex-end"}>
               <Typography fontSize={theme["font-size-m"]} fontWeight={"bold"}>
                 <StockValue stock={quantity <= 0 ? 'soldOut' : 'inStock'}>
-                  {value.toLocaleString(
+                  {value?.toLocaleString(
                     'en-GB', {
                       style: "currency",
                       currency: "GBP"

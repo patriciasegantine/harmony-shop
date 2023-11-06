@@ -4,7 +4,8 @@ import { ProductSort } from "../product-sort/product-sort.tsx";
 import { ProductFilter } from "../product-filter/product-filter.tsx";
 import { Box } from "@mui/material";
 import { theme } from "../../theme.ts";
-import { productList } from "../products-shop/productsList.tsx";
+import { useSelector } from "react-redux";
+import * as ProductsSelector from "../../store/products/products-selector.ts";
 
 interface IProductSearch {
 }
@@ -15,10 +16,11 @@ export const ProductManager: React.FC<IProductSearch> = () => {
   
   const [quantityProducts, setQuantityProducts] = useState<number>(0)
   
+  const allProducts = useSelector(ProductsSelector.allProducts)
+  
   useEffect(() => {
-    const products = productList.length
-    setQuantityProducts(products)
-  }, []);
+    setQuantityProducts(allProducts?.length)
+  }, [allProducts]);
   
   useEffect(() => {
     setSection('all products')
